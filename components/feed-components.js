@@ -1,6 +1,6 @@
 function FeedItem(props) {
   return (
-    <li key={props.title}>
+    <li>
       <div className="group block p-4 bg-white border-2 border-black shadow-offset-purple hover:shadow-offset-orange">
         <dl className="grid sm:block lg:grid xl:block grid-cols-1 grid-rows-3 items-center">
           <div>
@@ -41,6 +41,7 @@ export default function FeedList(props) {
         title={feedProp.title}
         rss={feedProp.rss}
         source={feedProp.source}
+        key={feedProp.title}
       />
     );
   });
