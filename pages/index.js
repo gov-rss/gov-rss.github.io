@@ -1,8 +1,39 @@
-import Link from "next/link";
 import Head from "next/head";
-import FeedLink from "../components/feed-link";
+import FeedList from "../components/feed-components";
+import { useState } from "react";
 
 export default function Home() {
+  const [region, setRegion] = useState("all");
+  let feedProps = {
+    vic: [
+      {
+        title: "Victorian premier",
+        rss: "/feed/vic-prem.rss",
+        source: "https://www.premier.vic.gov.au/media-centre"
+      }
+    ],
+    nsw: [
+      {
+        title: "NSW Government",
+        rss: "/feed/nsw-gov.rss",
+        source: "https://www.nsw.gov.au/news"
+      },
+      {
+        title: "NSW Premier",
+        rss: "/feed/nsw-prem.rss",
+        source: "https://www.nsw.gov.au/media-releases"
+      }
+    ]
+  };
+
+  let feedList;
+  if (region === "all") {
+    let tmpFeedProps = [].concat(...Object.values(feedProps));
+    feedList = <FeedList feedProps={tmpFeedProps} />;
+  } else {
+    feedList = <FeedList feedProps={feedProps[region]} />;
+  }
+
   return (
     <div className="min-h-screen py-2 bg-yellow-100">
       <Head>
@@ -17,9 +48,21 @@ export default function Home() {
           </h1>
         </div>
         <div className="items-center justify-between text-center px-10 md:px-64 lg:px-96 py-10">
-          <h2 className="text-4xl font-mono">Feeds</h2>
+          <div>
+            <h2 className="text-4xl font-mono">Feeds</h2>
+            <select
+              className="border-2 border-black"
+              value={region}
+              onChange={event => setRegion(event.target.value)}
+            >
+              <option value="all">All</option>
+              <option value="vic">VIC</option>
+              <option value="nsw">NSW</option>
+            </select>
+          </div>
           <br />
-          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-8">
+          {feedList}
+          {/* <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-8">
             <li>
               <FeedLink
                 title="Victorian Premier"
@@ -27,8 +70,6 @@ export default function Home() {
                 source="https://www.premier.vic.gov.au/media-centre"
               />
             </li>
-          </ul>
-          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-8">
             <li>
               <FeedLink
                 title="NSW Government"
@@ -43,7 +84,7 @@ export default function Home() {
                 source="https://www.nsw.gov.au/media-releases"
               />
             </li>
-          </ul>
+          </ul> */}
         </div>
       </main>
     </div>
