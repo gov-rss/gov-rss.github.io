@@ -7,29 +7,29 @@ export default function Home() {
   let feedProps = {
     vic: [
       {
-        title: "Victorian premier",
+        title: "Victorian Premier",
         rss: "/feed/vic-prem.rss",
-        source: "https://www.premier.vic.gov.au/media-centre"
-      }
+        source: "https://www.premier.vic.gov.au/media-centre",
+      },
     ],
     nsw: [
       {
         title: "NSW Government",
         rss: "/feed/nsw-gov.rss",
-        source: "https://www.nsw.gov.au/news"
+        source: "https://www.nsw.gov.au/news",
       },
       {
         title: "NSW Premier",
         rss: "/feed/nsw-prem.rss",
-        source: "https://www.nsw.gov.au/media-releases"
-      }
-    ]
+        source: "https://www.nsw.gov.au/media-releases",
+      },
+    ],
   };
 
   let feedList;
   if (region === "all") {
-    let tmpFeedProps = [].concat(...Object.values(feedProps));
-    feedList = <FeedList feedProps={tmpFeedProps} />;
+    let allFeedProps = [].concat(...Object.values(feedProps));
+    feedList = <FeedList feedProps={allFeedProps} />;
   } else {
     feedList = <FeedList feedProps={feedProps[region]} />;
   }
@@ -53,7 +53,7 @@ export default function Home() {
             <select
               className="border-2 border-black"
               value={region}
-              onChange={event => setRegion(event.target.value)}
+              onChange={(event) => setRegion(event.target.value)}
             >
               <option value="all">All</option>
               <option value="vic">VIC</option>
@@ -62,29 +62,6 @@ export default function Home() {
           </div>
           <br />
           {feedList}
-          {/* <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-8">
-            <li>
-              <FeedLink
-                title="Victorian Premier"
-                rss="/feed/vic-prem.rss"
-                source="https://www.premier.vic.gov.au/media-centre"
-              />
-            </li>
-            <li>
-              <FeedLink
-                title="NSW Government"
-                rss="/feed/nsw-gov.rss"
-                source="https://www.nsw.gov.au/news"
-              />
-            </li>
-            <li>
-              <FeedLink
-                title="NSW Premier"
-                rss="/feed/nsw-prem.rss"
-                source="https://www.nsw.gov.au/media-releases"
-              />
-            </li>
-          </ul> */}
         </div>
       </main>
     </div>
