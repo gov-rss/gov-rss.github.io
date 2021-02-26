@@ -4,27 +4,7 @@ import { useState } from "react";
 
 export default function Home() {
   const [region, setRegion] = useState("all");
-  let feedProps = {
-    vic: [
-      {
-        title: "Victorian Premier",
-        rss: "/feed/vic-prem.rss",
-        source: "https://www.premier.vic.gov.au/media-centre",
-      },
-    ],
-    nsw: [
-      {
-        title: "NSW Government",
-        rss: "/feed/nsw-gov.rss",
-        source: "https://www.nsw.gov.au/news",
-      },
-      {
-        title: "NSW Premier",
-        rss: "/feed/nsw-prem.rss",
-        source: "https://www.nsw.gov.au/media-releases",
-      },
-    ],
-  };
+  const feedProps = require("../data/rss.json");
 
   let feedList;
   if (region === "all") {
@@ -58,6 +38,8 @@ export default function Home() {
               <option value="all">All</option>
               <option value="vic">VIC</option>
               <option value="nsw">NSW</option>
+              <option value="qld">QLD</option>
+              <option value="nt">NT</option>
             </select>
           </div>
           <br />

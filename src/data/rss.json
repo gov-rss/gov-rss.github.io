@@ -1,0 +1,40 @@
+{
+  "vic": [
+    {
+      "title": "Victorian Premier",
+      "rss": "/feed/vic-prem.rss",
+      "source": "https://www.premier.vic.gov.au/media-centre"
+    }
+  ],
+  "nsw": [
+    {
+      "title": "NSW Government",
+      "rss": "/feed/nsw-gov.rss",
+      "source": "https://www.nsw.gov.au/news"
+    },
+    {
+      "title": "NSW Premier",
+      "rss": "/feed/nsw-prem.rss",
+      "source": "https://www.nsw.gov.au/media-releases"
+    }
+  ],
+  "qld": [
+    {
+      "title": "Qld Government",
+      "rss": "/feed/qld-gov.rss",
+      "source": "https://statements.qld.gov.au"
+    }
+  ],
+  "nt": [
+    {
+      "title": "NT Government",
+      "rss": "https://newsroom.nt.gov.au/api/RSS/NewsroomIndex",
+      "source": "https://newsroom.nt.gov.au"
+    },
+    {
+      "title": "NT Departments & Agencies",
+      "rss": "https://mediareleases.nt.gov.au/api/RSS/MediaReleasesIndex",
+      "source": "https://mediareleases.nt.gov.au"
+    }
+  ]
+}
