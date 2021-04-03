@@ -29,7 +29,7 @@ export default function Home() {
               <li className="font-bold cursor-pointer uppercase">
                 <div className="relative w-14">
                   <img
-                    src={flags[region]}
+                    src={process.env.BACKEND_URL + flags[region]}
                     className="absolute inset-y-0 left-0 top-0 flag"
                   />
                 </div>
