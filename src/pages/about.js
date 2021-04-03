@@ -8,8 +8,9 @@ const copy = (
       <p>
         This site contains a collection of RSS feeds I created to make it easier
         to keep up to date with our state governments. I like reading my news
-        through RSS readers, but I noticed most state governments (NT & Jodi
-        McKay excepted) didn't provide feeds for their announcements.
+        through RSS readers, but I noticed most state governments & opposition
+        (ACT, NT & Jodi McKay excepted) didn't provide feeds for their
+        announcements.
       </p>
       <br />
       <p>
