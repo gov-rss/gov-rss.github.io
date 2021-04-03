@@ -2,24 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  color-scheme: dark light;
-  --light: #fff;
-  --dark: #404040;
-}
-
 body {
   width: 87.5%;
   margin: 0 auto;
   background-color: theme("colors.green.50");
   max-width: 1400px;
 }
-
-/* @media (prefers-color-scheme: dark) {
-  body {
-    background-color: var(--dark);
-  }
-} */
 
 a {
   text-decoration: underline dotted;
