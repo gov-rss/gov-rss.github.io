@@ -4,7 +4,7 @@ export default function Header() {
   return (
     <Head>
       <title>gov+rss</title>
-      <link rel="icon" href="/favicon.svg" />
+      <link rel="icon" href={process.env.BACKEND_URL + "favicon.svg"} />
     </Head>
   );
 }

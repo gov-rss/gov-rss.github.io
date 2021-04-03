@@ -15,7 +15,7 @@ function Skeleton({ content }) {
         </div>
         <div>⬩</div>
         <div>
-          <Link href="/about" as={process.env.BACKEND_URL + "/about"}>
+          <Link href="/about" as={process.env.BACKEND_URL + "about"}>
             About
           </Link>
         </div>
