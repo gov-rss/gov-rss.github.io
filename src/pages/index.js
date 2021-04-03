@@ -22,14 +22,14 @@ export default function Home() {
         {Object.keys(feedProps).map((region) => {
           return (
             <Link
-              href="/[region]"
-              as={process.env.BACKEND_URL + region}
+              href={process.env.BACKEND_URL + "/[region]"}
+              as={process.env.BACKEND_URL + "/" + region}
               key={region}
             >
               <li className="font-bold cursor-pointer uppercase">
                 <div className="relative w-14">
                   <img
-                    src={process.env.BACKEND_URL + "flags/" + flags[region]}
+                    src={process.env.BACKEND_URL + "/flags/" + flags[region]}
                     className="absolute inset-y-0 left-0 top-0 flag"
                   />
                 </div>
