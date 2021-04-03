@@ -1,7 +1,6 @@
 import Link from "next/link";
 
-function Skeleton(props) {
-  const content = props.content;
+function Skeleton({ content }) {
   return (
     <main className="container min-h-screen pt-4 pb-10 md:px-32 xl:px-64 text-center">
       <h1 className="text-6xl md:text-7xl font-bold text-light-blue-900 hover:text-blue-800 bg-green-300 hover:bg-blue-50 cursor-default w-60 md:w-72">
