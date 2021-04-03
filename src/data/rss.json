@@ -1,40 +1,103 @@
 {
-  "vic": [
+  "act": [
     {
-      "title": "Victorian Premier",
-      "rss": "/feed/vic-prem.rss",
-      "source": "https://www.premier.vic.gov.au/media-centre"
+      "title": "ACT Shadow Government",
+      "rss": "https://github.com/callumskeet/rss-feeds/raw/master/act-Shadow Government.rss",
+      "source": "https://canberraliberals.org.au/news"
     }
   ],
   "nsw": [
     {
       "title": "NSW Government",
-      "rss": "/feed/nsw-gov.rss",
+      "rss": "https://github.com/callumskeet/rss-feeds/raw/master/nsw-gov.rss",
       "source": "https://www.nsw.gov.au/news"
     },
     {
       "title": "NSW Premier",
-      "rss": "/feed/nsw-prem.rss",
+      "rss": "https://github.com/callumskeet/rss-feeds/raw/master/nsw-prem.rss",
       "source": "https://www.nsw.gov.au/media-releases"
+    },
+    {
+      "title": "Leader of the Opposition [Official]",
+      "rss": "https://www.jodimckay.com.au/media_releases.rss", 
+      "source":"https://www.jodimckay.com.au/media_releases"
+    }
+  ],
+  "nt": [
+    {
+      "title": "NT Government [Official]",
+      "rss": "https://newsroom.nt.gov.au/api/RSS/NewsroomIndex",
+      "source": "https://newsroom.nt.gov.au"
+    },
+    {
+      "title": "NT Departments & Agencies [Official]",
+      "rss": "https://mediareleases.nt.gov.au/api/RSS/MediaReleasesIndex",
+      "source": "https://mediareleases.nt.gov.au"
+    },
+    {
+      "title": "NT Shadow Government",
+      "rss": "https://github.com/callumskeet/rss-feeds/raw/master/nt-Shadow Government.rss",
+      "source": "http://www.countryliberal.org/"
     }
   ],
   "qld": [
     {
       "title": "Qld Government",
-      "rss": "/feed/qld-gov.rss",
+      "rss": "https://github.com/callumskeet/rss-feeds/raw/master/qld-gov.rss",
       "source": "https://statements.qld.gov.au"
-    }
-  ],
-  "nt": [
-    {
-      "title": "NT Government",
-      "rss": "https://newsroom.nt.gov.au/api/RSS/NewsroomIndex",
-      "source": "https://newsroom.nt.gov.au"
     },
     {
-      "title": "NT Departments & Agencies",
-      "rss": "https://mediareleases.nt.gov.au/api/RSS/MediaReleasesIndex",
-      "source": "https://mediareleases.nt.gov.au"
+      "title": "Qld Shadow Government",
+      "rss": "https://github.com/callumskeet/rss-feeds/raw/master/qld-Shadow Government.rss",
+      "source": "https://www.lnp.org.au/news/"
+    }
+  ],
+  "sa": [
+    {
+      "title": "South Australian Premier",
+      "rss": "https://github.com/callumskeet/rss-feeds/raw/master/sa-prem.rss",
+      "source": "https://www.premier.sa.gov.au/news/media-releases"
+    },
+    {
+      "title": "South Australian Shadow Government",
+      "rss": "https://github.com/callumskeet/rss-feeds/raw/master/sa-Shadow Government.rss",
+      "source": "https://www.facebook.com/SouthAustralianLabor/"
+    }
+  ],
+  "tas": [
+    {
+      "title": "Premier of Tasmania",
+      "rss": "https://github.com/callumskeet/rss-feeds/raw/master/tas-prem.rss",
+      "source": "http://www.premier.tas.gov.au/media_release_search?queries_portfolio_query=Premier"
+    },
+    {
+      "title": "Tasmanian Labor",
+      "rss": "https://github.com/callumskeet/rss-feeds/raw/master/tas-Shadow Government.rss",
+      "source": "https://taslabor.com/news/"
+    }
+  ],
+  "vic": [
+    {
+      "title": "Premier of Victoria",
+      "rss": "https://github.com/callumskeet/rss-feeds/raw/master/vic-prem.rss",
+      "source": "https://www.premier.vic.gov.au/media-centre"
+    },
+    {
+      "title": "Liberal Victoria",
+      "rss": "https://github.com/callumskeet/rss-feeds/raw/master/vic-Shadow Government.rss",
+      "source": "https://vic.liberal.org.au/MediaReleases/"
+    }
+  ],
+  "wa": [
+    {
+      "title": "Government of Western Australia",
+      "rss": "https://github.com/callumskeet/rss-feeds/raw/master/wa-gov.rss",
+      "source": "https://www.mediastatements.wa.gov.au"
+    },
+    {
+      "title": "Liberal Party of Western Australia",
+      "rss": "https://github.com/callumskeet/rss-feeds/raw/master/wa-Shadow Government.rss",
+      "source": "https://www.waliberal.org.au/news/"
     }
   ]
 }

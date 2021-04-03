@@ -2,13 +2,56 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  color-scheme: dark light;
+  --light: #fff;
+  --dark: #404040;
+}
+
+body {
+  width: 87.5%;
+  margin: 0 auto;
+  background-color: theme("colors.green.50");
+  max-width: 1400px;
+}
+
+/* @media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--dark);
+  }
+} */
+
 a {
   text-decoration: underline dotted;
+  color: theme("colors.green.900");
 }
 
 a:hover {
   text-decoration: underline dotted;
+  color: theme("colors.blue.800");
   background-color: theme("colors.light-blue.100");
+}
+
+h1 {
+  margin: 0 auto;
+}
+
+p {
+  @apply text-lg font-semibold;
+}
+
+ul {
+  @apply grid grid-cols-1 gap-8 font-mono text-lg;
+  margin: 0 auto;
+}
+
+li {
+  @apply p-4 bg-white border border-green-500 shadow-offset-purple hover:shadow-offset-orange;
+}
+
+.flag {
+  image-rendering: crisp-edges;
+  @apply border-black border;
 }
 
 .bg-pattern {
@@ -17,11 +60,11 @@ a:hover {
 }
 
 .shadow-offset-purple {
-  box-shadow: 10px 10px theme("colors.purple.400");
+  box-shadow: 3px 3px theme("colors.purple.400");
 }
 
 @variants hover {
   .shadow-offset-orange {
-    box-shadow: 10px 10px theme("colors.orange.400");
+    box-shadow: 3px 3px theme("colors.orange.400");
   }
 }

@@ -12,6 +12,9 @@ module.exports = {
         orange: colors.orange,
         "light-blue": colors.lightBlue,
       },
+      screens: {
+        "3xl": "1600px",
+      },
     },
   },
   variants: {

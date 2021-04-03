@@ -1,51 +1,49 @@
-import Head from "next/head";
-import FeedList from "../components/feed-components";
-import { useState } from "react";
+import Link from "next/link";
+import Header from "../components/header";
+import Skeleton from "../components/skeleton";
 
 export default function Home() {
-  const [region, setRegion] = useState("all");
   const feedProps = require("../data/rss.json");
 
-  let feedList;
-  if (region === "all") {
-    let allFeedProps = [].concat(...Object.values(feedProps));
-    feedList = <FeedList feedProps={allFeedProps} />;
-  } else {
-    feedList = <FeedList feedProps={feedProps[region]} />;
-  }
+  const flags = {
+    nsw: "flags/Flag_of_New_South_Wales.svg",
+    qld: "flags/Flag_of_Queensland.svg",
+    sa: "flags/Flag_of_South_Australia.svg",
+    tas: "flags/Flag_of_Tasmania.svg",
+    vic: "flags/Flag_of_Victoria_(Australia).svg",
+    wa: "flags/Flag_of_Western_Australia.svg",
+    act: "flags/Flag_of_the_Australian_Capital_Territory.svg",
+    nt: "flags/Flag_of_the_Northern_Territory.svg",
+  };
+
+  const feedList = (
+    <>
+      <ul className="lg:grid-cols-2 xl:w-4/5">
+        {Object.keys(feedProps).map((region) => {
+          return (
+            <Link href="/[region]" as={"/" + region} key={region}>
+              <li className="font-bold cursor-pointer uppercase">
+                <div className="relative w-14">
+                  <img
+                    src={flags[region]}
+                    className="absolute inset-y-0 left-0 top-0 flag"
+                  />
+                </div>
+                {region}
+              </li>
+            </Link>
+          );
+        })}
+      </ul>
+    </>
+  );
+
+  const content = <>{feedList}</>;
 
   return (
-    <div className="min-h-screen py-2 bg-yellow-100">
-      <Head>
-        <title>gov+rss</title>
-        <link rel="icon" href="/favicon.svg" />
-      </Head>
-
-      <main className="divide-y-8 divide-orange-200">
-        <div className="flex flex-col items-center justify-center flex-1 px-20 text-center h-52 md:h-80 bg-pattern">
-          <h1 className="md:text-9xl text-7xl font-bold hover:text-blue-800 bg-orange-400 hover:bg-blue-50 cursor-default">
-            gov+rss
-          </h1>
-        </div>
-        <div className="items-center justify-between text-center px-10 md:px-64 lg:px-96 py-10">
-          <div>
-            <h2 className="text-4xl font-mono">Feeds</h2>
-            <select
-              className="border-2 border-black"
-              value={region}
-              onChange={(event) => setRegion(event.target.value)}
-            >
-              <option value="all">All</option>
-              <option value="vic">VIC</option>
-              <option value="nsw">NSW</option>
-              <option value="qld">QLD</option>
-              <option value="nt">NT</option>
-            </select>
-          </div>
-          <br />
-          {feedList}
-        </div>
-      </main>
-    </div>
+    <>
+      <Header />
+      <Skeleton content={feedList} />
+    </>
   );
 }
