@@ -1,8 +1,18 @@
 {
   "act": [
     {
-      "title": "ACT Shadow Government",
-      "rss": "https://github.com/callumskeet/rss-feeds/raw/master/act-Shadow Government.rss",
+      "title": "ACT Minister's Media Releases [Official]",
+      "rss": "https://www.cmtedd.act.gov.au/open_government/functions/functionality/media_release_rss_feeds/latest_minister_media_releases_rss",
+      "source": "https://www.cmtedd.act.gov.au/open_government/inform/act_government_media_releases/latest_minister_media_releases"
+    },
+    {
+      "title": "ACT Directorate's Media Releases [Official]",
+      "rss": "https://www.cmtedd.act.gov.au/open_government/functions/functionality/media_release_rss_feeds/latest_directorate_media_releases_rss",
+      "source": "https://www.cmtedd.act.gov.au/open_government/inform/act_government_media_releases/latest_directorate_media_releases"
+    },
+    {
+      "title": "ACT Shadow Government [Official]",
+      "rss": "https://github.com/callumskeet/rss-feeds/raw/master/act-shadow.rss",
       "source": "https://canberraliberals.org.au/news"
     }
   ],
@@ -36,7 +46,7 @@
     },
     {
       "title": "NT Shadow Government",
-      "rss": "https://github.com/callumskeet/rss-feeds/raw/master/nt-Shadow Government.rss",
+      "rss": "https://github.com/callumskeet/rss-feeds/raw/master/nt-shadow.rss",
       "source": "http://www.countryliberal.org/"
     }
   ],
@@ -48,7 +58,7 @@
     },
     {
       "title": "Qld Shadow Government",
-      "rss": "https://github.com/callumskeet/rss-feeds/raw/master/qld-Shadow Government.rss",
+      "rss": "https://github.com/callumskeet/rss-feeds/raw/master/qld-shadow.rss",
       "source": "https://www.lnp.org.au/news/"
     }
   ],
@@ -59,8 +69,8 @@
       "source": "https://www.premier.sa.gov.au/news/media-releases"
     },
     {
-      "title": "South Australian Shadow Government",
-      "rss": "https://github.com/callumskeet/rss-feeds/raw/master/sa-Shadow Government.rss",
+      "title": "South Australian Shadow Government [External Service]",
+      "rss": "https://fetchrss.com/rss/6067c274d344b56b9553b1626067c20655183063927c0e52.xml",
       "source": "https://www.facebook.com/SouthAustralianLabor/"
     }
   ],
@@ -72,7 +82,7 @@
     },
     {
       "title": "Tasmanian Labor",
-      "rss": "https://github.com/callumskeet/rss-feeds/raw/master/tas-Shadow Government.rss",
+      "rss": "https://github.com/callumskeet/rss-feeds/raw/master/tas-shadow.rss",
       "source": "https://taslabor.com/news/"
     }
   ],
@@ -84,7 +94,7 @@
     },
     {
       "title": "Liberal Victoria",
-      "rss": "https://github.com/callumskeet/rss-feeds/raw/master/vic-Shadow Government.rss",
+      "rss": "https://github.com/callumskeet/rss-feeds/raw/master/vic-shadow.rss",
       "source": "https://vic.liberal.org.au/MediaReleases/"
     }
   ],
@@ -96,7 +106,7 @@
     },
     {
       "title": "Liberal Party of Western Australia",
-      "rss": "https://github.com/callumskeet/rss-feeds/raw/master/wa-Shadow Government.rss",
+      "rss": "https://github.com/callumskeet/rss-feeds/raw/master/wa-shadow.rss",
       "source": "https://www.waliberal.org.au/news/"
     }
   ]
