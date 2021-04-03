@@ -9,11 +9,15 @@ function Skeleton({ content }) {
       <br />
       <div className="flex justify-center space-x-2">
         <div>
-          <Link href="/">Home</Link>
+          <Link href="/" as={process.env.BACKEND_URL + "/"}>
+            Home
+          </Link>
         </div>
         <div>⬩</div>
         <div>
-          <Link href="/about">About</Link>
+          <Link href="/about" as={process.env.BACKEND_URL + "/about"}>
+            About
+          </Link>
         </div>
         <div>⬩</div>
         <div>

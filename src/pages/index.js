@@ -21,7 +21,11 @@ export default function Home() {
       <ul className="lg:grid-cols-2 xl:w-4/5">
         {Object.keys(feedProps).map((region) => {
           return (
-            <Link href="/[region]" as={"/" + region} key={region}>
+            <Link
+              href="/[region]"
+              as={process.env.BACKEND_URL + "/" + region}
+              key={region}
+            >
               <li className="font-bold cursor-pointer uppercase">
                 <div className="relative w-14">
                   <img
