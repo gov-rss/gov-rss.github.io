@@ -1,43 +1,26 @@
-# gh-pages Hello World example
+# gov-rss.github.io
 
-This example shows the most basic idea behind Next. We have 2 pages: `pages/index.js` and `pages/about.js`. The former responds to `/` requests and the latter to `/about`. Using `next/link` you can add hyperlinks between them with universal routing capabilities.
+Source code for [gov-rss.github.io](https://gov-rss.github.io).
 
-## How to use
+Built with [Next.js](https://nextjs.org) and [Tailwind CSS](tailwindcss.com/).
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
+## Install
 
 ```bash
-npx create-next-app --example gh-pages gh-pages-app
-# or
-yarn create next-app --example gh-pages gh-pages-app
+$ npm install -g yarn
+$ yarn install
 ```
 
-### Deploy it to github
-
-Edit `env-config.js` and replace `'Next-gh-page-example'` by your project name.
-
-Edit `next.config.js` and replace `'Next-gh-page-example'` by your project name.
-
-1.  Create repository.
-2.  Link it to your github account.
-3.  Publish your master branch.
+## Develop
 
 ```bash
-npm run deploy
+$ yarn dev      # starts dev server at localhost:3000 with fast refresh
+$ yarn build    # builds site
+$ yarn export   # exports static copy of build
 ```
 
-Test it:
-
-Replace `<github-user-name>` and `<github-project-name>`
+## Deploy
 
 ```bash
-https://<github-user-name>.github.io/<github-project-name>/
-```
-
-Example:
-
-```bash
-https://github.com/thierryc/Next-gh-page-example/
-
-https://thierryc.github.io/Next-gh-page-example/
+$ yarn deploy   # builds, exports and pushes ./out/ to gh-pages branch
 ```
