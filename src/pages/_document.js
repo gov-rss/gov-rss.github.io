@@ -11,6 +11,9 @@ class MyDocument extends Document {
       <Html>
         <Head />
         <body>
+          <noscript>
+            <meta http-equiv="refresh" content="0;url=noscript.html" />
+          </noscript>
           {/* Firefox fix: Layout was forced before the page was fully loaded. */}
           <script>0</script>
           <Main />
