@@ -12,19 +12,19 @@
     },
     {
       "title": "ACT Shadow Government",
-      "rss": "https://github.com/callumskeet/rss-feeds/raw/master/act-shadow.rss",
+      "rss": "https://github.com/gov-rss/rss/raw/master/act-shadow.rss",
       "source": "https://canberraliberals.org.au/news"
     }
   ],
   "nsw": [
     {
       "title": "NSW Government",
-      "rss": "https://github.com/callumskeet/rss-feeds/raw/master/nsw-gov.rss",
+      "rss": "https://github.com/gov-rss/rss/raw/master/nsw-gov.rss",
       "source": "https://www.nsw.gov.au/news"
     },
     {
       "title": "NSW Premier",
-      "rss": "https://github.com/callumskeet/rss-feeds/raw/master/nsw-prem.rss",
+      "rss": "https://github.com/gov-rss/rss/raw/master/nsw-prem.rss",
       "source": "https://www.nsw.gov.au/media-releases"
     },
     {
@@ -46,26 +46,26 @@
     },
     {
       "title": "NT Shadow Government",
-      "rss": "https://github.com/callumskeet/rss-feeds/raw/master/nt-shadow.rss",
+      "rss": "https://github.com/gov-rss/rss/raw/master/nt-shadow.rss",
       "source": "http://www.countryliberal.org/"
     }
   ],
   "qld": [
     {
       "title": "Qld Government",
-      "rss": "https://github.com/callumskeet/rss-feeds/raw/master/qld-gov.rss",
+      "rss": "https://github.com/gov-rss/rss/raw/master/qld-gov.rss",
       "source": "https://statements.qld.gov.au"
     },
     {
       "title": "Qld Shadow Government",
-      "rss": "https://github.com/callumskeet/rss-feeds/raw/master/qld-shadow.rss",
+      "rss": "https://github.com/gov-rss/rss/raw/master/qld-shadow.rss",
       "source": "https://www.lnp.org.au/news/"
     }
   ],
   "sa": [
     {
       "title": "South Australian Premier",
-      "rss": "https://github.com/callumskeet/rss-feeds/raw/master/sa-prem.rss",
+      "rss": "https://github.com/gov-rss/rss/raw/master/sa-prem.rss",
       "source": "https://www.premier.sa.gov.au/news/media-releases"
     },
     {
@@ -77,36 +77,36 @@
   "tas": [
     {
       "title": "Premier of Tasmania",
-      "rss": "https://github.com/callumskeet/rss-feeds/raw/master/tas-prem.rss",
+      "rss": "https://github.com/gov-rss/rss/raw/master/tas-prem.rss",
       "source": "http://www.premier.tas.gov.au/media_release_search?queries_portfolio_query=Premier"
     },
     {
       "title": "Tasmanian Labor",
-      "rss": "https://github.com/callumskeet/rss-feeds/raw/master/tas-shadow.rss",
+      "rss": "https://github.com/gov-rss/rss/raw/master/tas-shadow.rss",
       "source": "https://taslabor.com/news/"
     }
   ],
   "vic": [
     {
       "title": "Premier of Victoria",
-      "rss": "https://github.com/callumskeet/rss-feeds/raw/master/vic-prem.rss",
+      "rss": "https://github.com/gov-rss/rss/raw/master/vic-prem.rss",
       "source": "https://www.premier.vic.gov.au/media-centre"
     },
     {
       "title": "Liberal Victoria",
-      "rss": "https://github.com/callumskeet/rss-feeds/raw/master/vic-shadow.rss",
+      "rss": "https://github.com/gov-rss/rss/raw/master/vic-shadow.rss",
       "source": "https://vic.liberal.org.au/MediaReleases/"
     }
   ],
   "wa": [
     {
       "title": "Government of Western Australia",
-      "rss": "https://github.com/callumskeet/rss-feeds/raw/master/wa-gov.rss",
+      "rss": "https://github.com/gov-rss/rss/raw/master/wa-gov.rss",
       "source": "https://www.mediastatements.wa.gov.au"
     },
     {
       "title": "Liberal Party of Western Australia",
-      "rss": "https://github.com/callumskeet/rss-feeds/raw/master/wa-shadow.rss",
+      "rss": "https://github.com/gov-rss/rss/raw/master/wa-shadow.rss",
       "source": "https://www.waliberal.org.au/news/"
     }
   ]

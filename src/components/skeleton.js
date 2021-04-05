@@ -21,9 +21,7 @@ function Skeleton({ content }) {
         </div>
         <div>⬩</div>
         <div>
-          <Link href="https://github.com/callumskeet/gov-scrape">
-            Contribute
-          </Link>
+          <Link href="https://github.com/gov-rss/scrape">Contribute</Link>
         </div>
       </div>
       <br />
