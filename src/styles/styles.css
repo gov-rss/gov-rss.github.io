@@ -10,12 +10,12 @@ body {
 }
 
 a {
-  text-decoration: underline dotted;
+  border-bottom: 1px dotted theme("colors.green.900");
   color: theme("colors.green.900");
 }
 
 a:hover {
-  text-decoration: underline dotted;
+  border-bottom: 1px dotted theme("colors.blue.800");
   color: theme("colors.blue.800");
   background-color: theme("colors.light-blue.100");
 }
@@ -38,7 +38,6 @@ li {
 }
 
 .flag {
-  image-rendering: crisp-edges;
   @apply border-black border;
 }
 
