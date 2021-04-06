@@ -42,8 +42,6 @@ export default function Home() {
     </>
   );
 
-  const content = <>{feedList}</>;
-
   return (
     <>
       <Header />
