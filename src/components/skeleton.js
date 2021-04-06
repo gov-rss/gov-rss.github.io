@@ -2,8 +2,8 @@ import Link from "next/link";
 
 function Skeleton({ content }) {
   return (
-    <main className="container min-h-screen pt-4 pb-10 md:px-32 xl:px-64 text-center">
-      <h1 className="text-6xl md:text-7xl font-bold text-light-blue-900 hover:text-blue-800 bg-green-300 hover:bg-blue-50 cursor-default w-60 md:w-72">
+    <main className="container min-h-screen pt-4 pb-10 md:px-32 xl:px-64 text-center relative">
+      <h1 className="text-6xl md:text-7xl font-bold text-light-blue-900 bg-green-300 cursor-default w-60 md:w-72">
         gov+rss
       </h1>
       <br />
@@ -26,6 +26,18 @@ function Skeleton({ content }) {
       </div>
       <br />
       {content}
+      <br />
+      <footer>
+        <div className="absolute inset-x-0 bottom-5">
+          Website copyright (c) 2021{" "}
+          <Link href="https://github.com/callumskeet">Callum Skeet</Link> under
+          the{" "}
+          <Link href="https://github.com/gov-rss/gov-rss.github.io/blob/master/LICENSE">
+            MIT license
+          </Link>
+        </div>
+        <br />
+      </footer>
     </main>
   );
 }
