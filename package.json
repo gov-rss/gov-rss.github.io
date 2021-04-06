@@ -9,7 +9,7 @@
     "deploy": "rm -rf node_modules/.cache && next build && next export && touch out/.nojekyll && git add out/ && git commit -m \"Deploy gov-rss to gh-pages\" && git subtree push --prefix out origin gh-pages"
   },
   "dependencies": {
-    "next": "^10.0.7",
+    "next": "^10.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },
