@@ -1,231 +1,392 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>gov+rss</title>
     <link rel="icon" href="favicon.svg" />
     <style>
-        * {
-            font-family: sans-serif;
-        }
+      * {
+        font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+          "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+          "Noto Color Emoji";
+      }
 
-        a {
-            text-decoration: none;
-            color: rgb(6, 78, 59);
-            border-bottom: 1px dotted rgb(6, 78, 59);
-        }
+      a {
+        text-decoration: none;
+        color: rgb(6, 78, 59);
+        border-bottom: 1px dotted rgb(6, 78, 59);
+      }
 
-        a:hover {
-            color: 1px dotted rgb(30, 64, 175);
-            border-bottom: 1px dotted rgb(30, 64, 175);
-            background-color: rgb(224, 242, 254);
-        }
+      a:hover {
+        color: 1px dotted rgb(30, 64, 175);
+        border-bottom: 1px dotted rgb(30, 64, 175);
+        background-color: rgb(224, 242, 254);
+      }
 
-        body {
-            background-color: rgb(236, 253, 245);
-        }
+      body {
+        background-color: rgb(236, 253, 245);
+      }
 
-        footer {
-            text-align: center;
-            line-height: 1.75rem;
-        }
+      footer {
+        text-align: center;
+        line-height: 1.75rem;
+      }
 
-        h1 {
-            background-color: rgb(110, 231, 183);
-            font-size: 3.75rem;
-            font-weight: 700;
-            color: rgb(12, 74, 110);
-            width: 15rem;
-            cursor: default;
-            margin: 0 auto;
-        }
+      h1 {
+        background-color: rgb(110, 231, 183);
+        font-size: 3.75rem;
+        font-weight: 700;
+        color: rgb(12, 74, 110);
+        width: 15rem;
+        cursor: default;
+        margin: 0 auto;
+      }
 
-        p {
-            /* font-weight: bold; */
-            font-size: 1.125rem;
-            line-height: 1.75rem;
-            margin: 20;
-        }
+      p {
+        font-weight: 600;
+        font-size: 1.125rem;
+        line-height: 1.75rem;
+        margin: 20;
+      }
 
-        table {
-            margin: 0 auto;
-            border-collapse: collapse;
-            background-color: rgb(255, 255, 255);
-        }
+      table {
+        margin: 0 auto;
+        border-collapse: collapse;
+        background-color: rgb(255, 255, 255);
+      }
 
-        td,
-        th {
-            border: 1px solid;
-            border-color: rgb(16, 185, 129);
-            padding: 0.5rem;
-            text-align: left;
-        }
+      td,
+      th {
+        border: 1px solid;
+        border-color: rgb(16, 185, 129);
+        padding: 0.5rem;
+        text-align: left;
+      }
 
-        #about {
-            margin: 0 auto;
-            max-width: 630px;
-            padding-left: 3%;
-            padding-right: 3%;
-        }
+      #about {
+        margin: 0 auto;
+        max-width: 630px;
+        padding-left: 3%;
+        padding-right: 3%;
+      }
 
-        #heading {
-            padding-top: 1%;
-            text-align: center;
-        }
+      #heading {
+        padding-top: 1%;
+        text-align: center;
+      }
 
-        .back-to-top {
-            font-weight: normal;
-            font-size: 16px;
-            display: inline;
-        }
+      .back-to-top {
+        font-weight: normal;
+        font-size: 16px;
+        display: inline;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <div id="heading">
-        <h1>gov+rss</h1>
-        <br />
-        <a href="https://github.com/gov-rss/scrape">Contribute</a>
+      <h1>gov+rss</h1>
+      <br />
+      <a href="https://github.com/gov-rss/scrape">Contribute</a>
     </div>
     <!-- <br /> -->
     <div id="about">
-        <!-- <h2>About</h2>  -->
-        <p>
-            This site contains a collection of RSS feeds I created to make it easier to keep up to date with our state
-            governments. I like reading my news through RSS readers, but I noticed most state governments & opposition
-            (ACT, NT & Jodi McKay excepted) didn't provide feeds for their announcements.
-        </p>
-        <p>
-            Pull requests can be made to the <a href="https://github.com/gov-rss/scrape">repository</a> if there are
-            additional sources you would like to see hosted
-            here.
-        </p>
+      <!-- <h2>About</h2>  -->
+      <p>
+        This site contains a collection of RSS feeds I created to make it easier
+        to keep up to date with our state governments. I like reading my news
+        through RSS readers, but I noticed most state governments & opposition
+        (ACT, NT & Jodi McKay excepted) didn't provide feeds for their
+        announcements.
+      </p>
+      <p>
+        Pull requests can be made to the
+        <a href="https://github.com/gov-rss/scrape">repository</a> if there are
+        additional sources you would like to see hosted here.
+      </p>
     </div>
+    <br />
     <div>
-        <table>
-
-            <thead>
-                <tr>
-                    <th>Feed link</th>
-                    <th>Source</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><a href="https://www.cmtedd.act.gov.au/open_government/functions/functionality/media_release_rss_feeds/latest_minister_media_releases_rss"
-                            rel="nofollow">ACT Minister's Media Releases [Official]</a></td>
-                    <td><a href="https://www.cmtedd.act.gov.au/open_government/inform/act_government_media_releases/latest_minister_media_releases"
-                            rel="nofollow">cmtedd.act.gov.au</a></td>
-                </tr>
-                <tr>
-                    <td><a href="https://www.cmtedd.act.gov.au/open_government/functions/functionality/media_release_rss_feeds/latest_directorate_media_releases_rss"
-                            rel="nofollow">ACT Directorate's Media Releases [Official]</a></td>
-                    <td><a href="https://www.cmtedd.act.gov.au/open_government/inform/act_government_media_releases/latest_directorate_media_releases"
-                            rel="nofollow">cmtedd.act.gov.au</a></td>
-                </tr>
-                <tr>
-                    <td><a href="https://github.com/gov-rss/rss/raw/master/act-liberals.rss">Canberra Liberals</a></td>
-                    <td><a href="https://canberraliberals.org.au/news" rel="nofollow">canberraliberals.org.au</a></td>
-                </tr>
-                <tr>
-                    <td><a href="https://github.com/gov-rss/rss/raw/master/nsw-gov.rss">NSW Government</a>
-                    </td>
-                    <td><a href="https://www.nsw.gov.au/news" rel="nofollow">nsw.gov.au</a></td>
-                </tr>
-                <tr>
-                    <td><a href="https://github.com/gov-rss/rss/raw/master/nsw-prem.rss">NSW Premier</a></td>
-                    <td><a href="https://www.nsw.gov.au/media-releases" rel="nofollow">nsw.gov.au</a></td>
-                </tr>
-                <tr>
-                    <td><a href="https://www.jodimckay.com.au/media_releases.rss" rel="nofollow">Jodi McKay
-                            [Official]</a></td>
-                    <td><a href="https://www.jodimckay.com.au/media_releases" rel="nofollow">jodimckay.com.au</a></td>
-                </tr>
-                <tr>
-                    <td><a href="https://newsroom.nt.gov.au/api/RSS/NewsroomIndex" rel="nofollow">NT Government
-                            [Official]</a></td>
-                    <td><a href="https://newsroom.nt.gov.au" rel="nofollow">newsroom.nt.gov.au</a></td>
-                </tr>
-                <tr>
-                    <td><a href="https://mediareleases.nt.gov.au/api/RSS/MediaReleasesIndex" rel="nofollow">NT
-                            Departments
-                            &amp; Agencies [Official]</a></td>
-                    <td><a href="https://mediareleases.nt.gov.au" rel="nofollow">mediareleases.nt.gov.au</a></td>
-                </tr>
-                <tr>
-                    <td><a href="https://github.com/gov-rss/rss/raw/master/nt-liberals.rss">NT Country Liberals</a>
-                    </td>
-                    <td><a href="http://www.countryliberal.org/" rel="nofollow">countryliberal.org</a></td>
-                </tr>
-                <tr>
-                    <td><a href="https://github.com/gov-rss/rss/raw/master/qld-gov.rss">Qld Government</a>
-                    </td>
-                    <td><a href="https://statements.qld.gov.au" rel="nofollow">statements.qld.gov.au</a></td>
-                </tr>
-                <tr>
-                    <td><a href="https://github.com/gov-rss/rss/raw/master/qld-liberal-nationals.rss">Qld Liberal Nationals</a></td>
-                    <td><a href="https://www.lnp.org.au/news/" rel="nofollow">lnp.org.au</a></td>
-                </tr>
-                <tr>
-                    <td><a href="https://github.com/gov-rss/rss/raw/master/sa-prem.rss">South Australian
-                            Premier</a></td>
-                    <td><a href="https://www.premier.sa.gov.au/news/media-releases" rel="nofollow">premier.sa.gov.au</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td><a href="https://fetchrss.com/rss/6067c274d344b56b9553b1626067c20655183063927c0e52.xml"
-                            rel="nofollow">South Australian Labor [External Service]</a></td>
-                    <td><a href="https://www.facebook.com/SouthAustralianLabor/" rel="nofollow">facebook.com</a></td>
-                </tr>
-                <tr>
-                    <td><a href="https://github.com/gov-rss/rss/raw/master/tas-prem.rss">Premier of
-                            Tasmania</a>
-                    </td>
-                    <td><a href="http://www.premier.tas.gov.au/media_release_search?queries_portfolio_query=Premier"
-                            rel="nofollow">premier.tas.gov.au</a></td>
-                </tr>
-                <tr>
-                    <td><a href="https://github.com/gov-rss/rss/raw/master/tas-labor.rss">Tasmanian Labor</a>
-                    </td>
-                    <td><a href="https://taslabor.com/news/" rel="nofollow">taslabor.com</a></td>
-                </tr>
-                <tr>
-                    <td><a href="https://github.com/gov-rss/rss/raw/master/vic-prem.rss">Premier of
-                            Victoria</a>
-                    </td>
-                    <td><a href="https://www.premier.vic.gov.au/media-centre" rel="nofollow">premier.vic.gov.au</a></td>
-                </tr>
-                <tr>
-                    <td><a href="https://github.com/gov-rss/rss/raw/master/vic-liberals.rss">Liberal
-                            Victoria</a>
-                    </td>
-                    <td><a href="https://vic.liberal.org.au/MediaReleases/" rel="nofollow">vic.liberal.org.au</a></td>
-                </tr>
-                <tr>
-                    <td><a href="https://github.com/gov-rss/rss/raw/master/wa-gov.rss">Government of Western
-                            Australia</a></td>
-                    <td><a href="https://www.mediastatements.wa.gov.au" rel="nofollow">mediastatements.wa.gov.au</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td><a href="https://github.com/gov-rss/rss/raw/master/wa-liberals.rss">Liberal Party of
-                            Western
-                            Australia</a></td>
-                    <td><a href="https://www.waliberal.org.au/news/" rel="nofollow">waliberal.org.au</a></td>
-                </tr>
-            </tbody>
-
-        </table>
+      <table>
+        <thead>
+          <tr>
+            <th>Feed link</th>
+            <th>Source</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <a
+                href="https://www.cmtedd.act.gov.au/open_government/functions/functionality/media_release_rss_feeds/latest_minister_media_releases_rss"
+                rel="nofollow"
+                >ACT Minister's Media Releases [Official]</a
+              >
+            </td>
+            <td>
+              <a
+                href="https://www.cmtedd.act.gov.au/open_government/inform/act_government_media_releases/latest_minister_media_releases"
+                rel="nofollow"
+                >cmtedd.act.gov.au</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a
+                href="https://www.cmtedd.act.gov.au/open_government/functions/functionality/media_release_rss_feeds/latest_directorate_media_releases_rss"
+                rel="nofollow"
+                >ACT Directorate's Media Releases [Official]</a
+              >
+            </td>
+            <td>
+              <a
+                href="https://www.cmtedd.act.gov.au/open_government/inform/act_government_media_releases/latest_directorate_media_releases"
+                rel="nofollow"
+                >cmtedd.act.gov.au</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a
+                href="https://github.com/gov-rss/rss/raw/master/act-liberals.rss"
+                >Canberra Liberals</a
+              >
+            </td>
+            <td>
+              <a href="https://canberraliberals.org.au/news" rel="nofollow"
+                >canberraliberals.org.au</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="https://github.com/gov-rss/rss/raw/master/nsw-gov.rss"
+                >NSW Government</a
+              >
+            </td>
+            <td>
+              <a href="https://www.nsw.gov.au/news" rel="nofollow"
+                >nsw.gov.au</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="https://github.com/gov-rss/rss/raw/master/nsw-prem.rss"
+                >NSW Premier</a
+              >
+            </td>
+            <td>
+              <a href="https://www.nsw.gov.au/media-releases" rel="nofollow"
+                >nsw.gov.au</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a
+                href="https://www.jodimckay.com.au/media_releases.rss"
+                rel="nofollow"
+                >Jodi McKay [Official]</a
+              >
+            </td>
+            <td>
+              <a
+                href="https://www.jodimckay.com.au/media_releases"
+                rel="nofollow"
+                >jodimckay.com.au</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a
+                href="https://newsroom.nt.gov.au/api/RSS/NewsroomIndex"
+                rel="nofollow"
+                >NT Government [Official]</a
+              >
+            </td>
+            <td>
+              <a href="https://newsroom.nt.gov.au" rel="nofollow"
+                >newsroom.nt.gov.au</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a
+                href="https://mediareleases.nt.gov.au/api/RSS/MediaReleasesIndex"
+                rel="nofollow"
+                >NT Departments &amp; Agencies [Official]</a
+              >
+            </td>
+            <td>
+              <a href="https://mediareleases.nt.gov.au" rel="nofollow"
+                >mediareleases.nt.gov.au</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a
+                href="https://github.com/gov-rss/rss/raw/master/nt-liberals.rss"
+                >NT Country Liberals</a
+              >
+            </td>
+            <td>
+              <a href="http://www.countryliberal.org/" rel="nofollow"
+                >countryliberal.org</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="https://github.com/gov-rss/rss/raw/master/qld-gov.rss"
+                >Qld Government</a
+              >
+            </td>
+            <td>
+              <a href="https://statements.qld.gov.au" rel="nofollow"
+                >statements.qld.gov.au</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a
+                href="https://github.com/gov-rss/rss/raw/master/qld-liberal-nationals.rss"
+                >Qld Liberal Nationals</a
+              >
+            </td>
+            <td>
+              <a href="https://www.lnp.org.au/news/" rel="nofollow"
+                >lnp.org.au</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="https://github.com/gov-rss/rss/raw/master/sa-prem.rss"
+                >South Australian Premier</a
+              >
+            </td>
+            <td>
+              <a
+                href="https://www.premier.sa.gov.au/news/media-releases"
+                rel="nofollow"
+                >premier.sa.gov.au</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a
+                href="https://fetchrss.com/rss/6067c274d344b56b9553b1626067c20655183063927c0e52.xml"
+                rel="nofollow"
+                >South Australian Labor [External Service]</a
+              >
+            </td>
+            <td>
+              <a
+                href="https://www.facebook.com/SouthAustralianLabor/"
+                rel="nofollow"
+                >facebook.com</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="https://github.com/gov-rss/rss/raw/master/tas-prem.rss"
+                >Premier of Tasmania</a
+              >
+            </td>
+            <td>
+              <a
+                href="http://www.premier.tas.gov.au/media_release_search?queries_portfolio_query=Premier"
+                rel="nofollow"
+                >premier.tas.gov.au</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="https://github.com/gov-rss/rss/raw/master/tas-labor.rss"
+                >Tasmanian Labor</a
+              >
+            </td>
+            <td>
+              <a href="https://taslabor.com/news/" rel="nofollow"
+                >taslabor.com</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="https://github.com/gov-rss/rss/raw/master/vic-prem.rss"
+                >Premier of Victoria</a
+              >
+            </td>
+            <td>
+              <a
+                href="https://www.premier.vic.gov.au/media-centre"
+                rel="nofollow"
+                >premier.vic.gov.au</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a
+                href="https://github.com/gov-rss/rss/raw/master/vic-liberals.rss"
+                >Liberal Victoria</a
+              >
+            </td>
+            <td>
+              <a href="https://vic.liberal.org.au/MediaReleases/" rel="nofollow"
+                >vic.liberal.org.au</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="https://github.com/gov-rss/rss/raw/master/wa-gov.rss"
+                >Government of Western Australia</a
+              >
+            </td>
+            <td>
+              <a href="https://www.mediastatements.wa.gov.au" rel="nofollow"
+                >mediastatements.wa.gov.au</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a
+                href="https://github.com/gov-rss/rss/raw/master/wa-liberals.rss"
+                >Liberal Party of Western Australia</a
+              >
+            </td>
+            <td>
+              <a href="https://www.waliberal.org.au/news/" rel="nofollow"
+                >waliberal.org.au</a
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
     <br />
     <footer>
-        Website copyright (c) 2021 <a href="https://github.com/callumskeet">Callum Skeet</a> under the <a
-            href="https://github.com/gov-rss/gov-rss.github.io/blob/master/LICENSE">MIT license</a>
+      Website copyright (c) 2021
+      <a href="https://github.com/callumskeet">Callum Skeet</a> under the
+      <a href="https://github.com/gov-rss/gov-rss.github.io/blob/master/LICENSE"
+        >MIT license</a
+      >
     </footer>
-
-</body>
-
+  </body>
 </html>
