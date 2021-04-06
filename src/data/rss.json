@@ -11,8 +11,8 @@
       "source": "https://www.cmtedd.act.gov.au/open_government/inform/act_government_media_releases/latest_directorate_media_releases"
     },
     {
-      "title": "ACT Shadow Government",
-      "rss": "https://github.com/gov-rss/rss/raw/master/act-shadow.rss",
+      "title": "Canberra Liberals",
+      "rss": "https://github.com/gov-rss/rss/raw/master/act-liberals.rss",
       "source": "https://canberraliberals.org.au/news"
     }
   ],
@@ -28,7 +28,7 @@
       "source": "https://www.nsw.gov.au/media-releases"
     },
     {
-      "title": "Leader of the Opposition [Official]",
+      "title": "Jodi McKay [Official]",
       "rss": "https://www.jodimckay.com.au/media_releases.rss", 
       "source":"https://www.jodimckay.com.au/media_releases"
     }
@@ -45,8 +45,8 @@
       "source": "https://mediareleases.nt.gov.au"
     },
     {
-      "title": "NT Shadow Government",
-      "rss": "https://github.com/gov-rss/rss/raw/master/nt-shadow.rss",
+      "title": "Country Liberals",
+      "rss": "https://github.com/gov-rss/rss/raw/master/nt-liberals.rss",
       "source": "http://www.countryliberal.org/"
     }
   ],
@@ -57,8 +57,8 @@
       "source": "https://statements.qld.gov.au"
     },
     {
-      "title": "Qld Shadow Government",
-      "rss": "https://github.com/gov-rss/rss/raw/master/qld-shadow.rss",
+      "title": "Qld Liberal Nationals",
+      "rss": "https://github.com/gov-rss/rss/raw/master/qld-liberal-nationals.rss",
       "source": "https://www.lnp.org.au/news/"
     }
   ],
@@ -69,7 +69,7 @@
       "source": "https://www.premier.sa.gov.au/news/media-releases"
     },
     {
-      "title": "South Australian Shadow Government [External Service]",
+      "title": "South Australian Labor [External Service]",
       "rss": "https://fetchrss.com/rss/6067c274d344b56b9553b1626067c20655183063927c0e52.xml",
       "source": "https://www.facebook.com/SouthAustralianLabor/"
     }
@@ -82,7 +82,7 @@
     },
     {
       "title": "Tasmanian Labor",
-      "rss": "https://github.com/gov-rss/rss/raw/master/tas-shadow.rss",
+      "rss": "https://github.com/gov-rss/rss/raw/master/tas-labor.rss",
       "source": "https://taslabor.com/news/"
     }
   ],
@@ -94,7 +94,7 @@
     },
     {
       "title": "Liberal Victoria",
-      "rss": "https://github.com/gov-rss/rss/raw/master/vic-shadow.rss",
+      "rss": "https://github.com/gov-rss/rss/raw/master/vic-liberals.rss",
       "source": "https://vic.liberal.org.au/MediaReleases/"
     }
   ],
@@ -106,7 +106,7 @@
     },
     {
       "title": "Liberal Party of Western Australia",
-      "rss": "https://github.com/gov-rss/rss/raw/master/wa-shadow.rss",
+      "rss": "https://github.com/gov-rss/rss/raw/master/wa-liberals.rss",
       "source": "https://www.waliberal.org.au/news/"
     }
   ]
