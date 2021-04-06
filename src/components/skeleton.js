@@ -20,6 +20,10 @@ function Skeleton({ content }) {
           </Link>
         </div>
         <div>⬩</div>
+        <Link href="/privacy" as={process.env.BACKEND_URL + "/privacy"}>
+          Privacy
+        </Link>
+        <div>⬩</div>
         <div>
           <Link href="https://github.com/gov-rss/scrape">Contribute</Link>
         </div>
