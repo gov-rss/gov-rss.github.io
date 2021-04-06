@@ -6,14 +6,14 @@ export default function Home() {
   const feedProps = require("../data/rss.json");
 
   const flags = {
-    nsw: "Flag_of_New_South_Wales.png",
-    qld: "Flag_of_Queensland.png",
-    sa: "Flag_of_South_Australia.png",
-    tas: "Flag_of_Tasmania.png",
-    vic: "Flag_of_Victoria_(Australia).png",
-    wa: "Flag_of_Western_Australia.png",
-    act: "Flag_of_the_Australian_Capital_Territory.png",
-    nt: "Flag_of_the_Northern_Territory.png",
+    nsw: "Flag_of_New_South_Wales.svg",
+    qld: "Flag_of_Queensland.svg",
+    sa: "Flag_of_South_Australia.svg",
+    tas: "Flag_of_Tasmania.svg",
+    vic: "Flag_of_Victoria_(Australia).svg",
+    wa: "Flag_of_Western_Australia.svg",
+    act: "Flag_of_the_Australian_Capital_Territory.svg",
+    nt: "Flag_of_the_Northern_Territory.svg",
   };
 
   const feedList = (
