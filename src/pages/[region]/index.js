@@ -1,10 +1,9 @@
-import Header from "../../components/header";
 import Skeleton from "../../components/skeleton";
 import rssData from "../../data/rss.json";
 
 function RssItem({ title, rss, source }) {
   return (
-    <li className="grid">
+    <li className="grid menu-item">
       <dl className="self-center">
         <div>
           <dt className="sr-only">Feed name</dt>
@@ -48,12 +47,7 @@ function RssList({ feedProps: rssProps }) {
 
 function RssPage({ rssRegionData }) {
   const content = <RssList feedProps={rssRegionData} />;
-  return (
-    <>
-      <Header />
-      <Skeleton content={content} />
-    </>
-  );
+  return <Skeleton content={content} />;
 }
 
 export function getStaticPaths() {

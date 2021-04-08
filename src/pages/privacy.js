@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Header from "../components/header";
 import Skeleton from "../components/skeleton";
 
 const content = (
@@ -30,10 +29,5 @@ const content = (
 );
 
 export default function Privacy() {
-  return (
-    <>
-      <Header />
-      <Skeleton content={content} />
-    </>
-  );
+  return <Skeleton content={content} />;
 }

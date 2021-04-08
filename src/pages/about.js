@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Header from "../components/header";
 import Skeleton from "../components/skeleton";
 
 const copy = (
@@ -31,7 +30,6 @@ const copy = (
 export default function About() {
   return (
     <>
-      <Header></Header>
       <Skeleton content={copy}></Skeleton>
     </>
   );

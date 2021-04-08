@@ -33,7 +33,7 @@ ul {
   margin: 0 auto;
 }
 
-li {
+.menu-item {
   @apply p-4 bg-white border border-green-500 shadow-offset-purple hover:shadow-offset-orange;
 }
 
