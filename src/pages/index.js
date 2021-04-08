@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import Skeleton from "../components/skeleton";
 
 export default function Home() {
