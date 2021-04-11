@@ -20,26 +20,23 @@ export default function Home() {
       <ul className="lg:grid-cols-2 xl:w-4/5">
         {Object.keys(feedProps).map((region) => {
           return (
-            <li key={region}>
+            <li className="menu-item" key={region}>
               <Link
                 href={process.env.BACKEND_URL + "/[region]"}
                 as={process.env.BACKEND_URL + "/" + region}
               >
-                <a>
-                  <div className="font-bold cursor-pointer uppercase menu-item grid grid-cols-3">
-                    <div className="w-14 place-self-left">
-                      {/*className="relative w-14 h-0">*/}
-                      <img
-                        src={
-                          process.env.BACKEND_URL + "/flags/" + flags[region]
-                        }
-                        className="flag"
-                        // className="absolute inset-y-0 left-0 top-0 flag"
-                        alt={region.toUpperCase() + " state flag"}
-                      />
-                    </div>
-                    <div className="place-self-center">{region}</div>
-                  </div>
+                <a className="menu-grid hover:menu-border">
+                  <img
+                    src={process.env.BACKEND_URL + "/flags/" + flags[region]}
+                    className="flag place-self-left"
+                    width="56"
+                    height="29"
+                    alt={region.toUpperCase() + " state flag"}
+                  />
+
+                  <span className="place-self-center font-bold uppercase">
+                    {region}
+                  </span>
                 </a>
               </Link>
             </li>

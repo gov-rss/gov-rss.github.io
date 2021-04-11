@@ -4,7 +4,7 @@ import rssData from "../../data/rss.json";
 function RssItem({ title, rss, source }) {
   return (
     <li className="grid menu-item">
-      <dl className="self-center">
+      <dl className="self-center p-4">
         <div>
           <dt className="sr-only">Feed name</dt>
           <dd className="font-bold" aria-label={title} aria-required="true">
