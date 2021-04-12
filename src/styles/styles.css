@@ -40,7 +40,7 @@ ul {
 
 .menu-grid {
   @apply grid grid-cols-3 p-4 hover:bg-white hover:text-black text-black;
-  border-bottom: 1px solid theme("colors.green.500");
+  border-bottom: none;
 }
 
 .flag {
@@ -62,6 +62,6 @@ ul {
   }
 
   .menu-border {
-    border-bottom: 1px solid theme("colors.green.500");
+    border-bottom: none;
   }
 }
