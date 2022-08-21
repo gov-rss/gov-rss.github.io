@@ -1,14 +1,10 @@
 /** @type {import('tailwindcss').Config} */
-import colors from 'tailwindcss/colors.js'
 
-export default {
+module.exports = {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   theme: {
     extend: {
-      colors: {
-        orange: colors.orange,
-        'light-blue': colors.sky,
-      },
+      colors: {},
       screens: {
         '3xl': '1600px',
       },
