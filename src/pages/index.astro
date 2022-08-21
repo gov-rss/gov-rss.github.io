@@ -3,10 +3,7 @@ import Layout from '../layouts/Layout.astro'
 import feedProps from '../data/rss.json'
 import Card from '../components/Card.astro'
 import CardList from '../components/CardList.astro'
-
-function objectKeys<TObj>(obj: TObj) {
-	return Object.keys(obj) as (keyof TObj)[]
-}
+import { objectKeys } from '../util/objectKeys'
 
 type Regions = keyof typeof feedProps
 
