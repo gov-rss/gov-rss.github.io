@@ -7,6 +7,5 @@ export default defineConfig({
   server: {
     port: 3001,
   },
-  site: 'https://gov-rss.github.io',
   integrations: [tailwind()],
 })
