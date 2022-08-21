@@ -1,12 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import feedProps from '../data/rss.json'
+import Card from '../components/Card.astro'
+import CardList from '../components/CardList.astro'
 
-type FeedProps = typeof feedProps
+function objectKeys<TObj>(obj: TObj) {
+	return Object.keys(obj) as (keyof TObj)[]
+}
 
-const feedPropsKeys = Object.keys(feedProps) as (keyof FeedProps)[]
+type Regions = keyof typeof feedProps
 
-const flags: Record<keyof FeedProps, string> = {
+const flags: Record<Regions, string> = {
 	nsw: 'Flag_of_New_South_Wales.svg',
 	qld: 'Flag_of_Queensland.svg',
 	sa: 'Flag_of_South_Australia.svg',
@@ -19,64 +23,27 @@ const flags: Record<keyof FeedProps, string> = {
 ---
 
 <Layout>
-	<ul class="lg:grid-cols-2 xl:w-4/5">
+	<CardList>
 		{
-			feedPropsKeys.map((region) => (
-				<li class="menu-item">
-					<a href={`/${region}`} class="menu-grid hover:menu-border">
+			objectKeys(feedProps).map((region) => (
+				<Card>
+					<a
+						href={`/${region}`}
+						class="grid grid-cols-3 p-4 text-black hover:menu-border"
+					>
 						<img
 							src={`/flags/${flags[region]}`}
-							class="flag place-self-left"
+							class="border border-black self-left"
 							width="56"
 							height="29"
 							alt={`${region.toUpperCase()} state flag`}
 						/>
-						<span class="place-self-center font-bold uppercase">{region}</span>
+						<span class="self-center font-bold uppercase font-mono">
+							{region}
+						</span>
 					</a>
-				</li>
+				</Card>
 			))
 		}
-	</ul>
+	</CardList>
 </Layout>
-
-<style>
-	@tailwind utilities;
-
-	ul {
-		@apply grid grid-cols-1 gap-8 font-mono text-lg;
-		margin: 0 auto;
-	}
-
-	.menu-item {
-		@apply bg-white border border-green-500 shadow-offset-purple hover:shadow-offset-orange;
-		border-bottom: 1px solid theme('colors.green.500');
-	}
-
-	.menu-grid {
-		@apply grid grid-cols-3 p-4 hover:bg-white hover:text-black text-black;
-		border-bottom: none;
-	}
-
-	.flag {
-		@apply border-black border;
-	}
-
-	.opt-out {
-		@apply w-full;
-		height: 310px;
-	}
-
-	.shadow-offset-purple {
-		box-shadow: 3px 3px theme('colors.purple.400');
-	}
-
-	@layer utilities {
-		.shadow-offset-orange {
-			box-shadow: 3px 3px theme('colors.orange.400');
-		}
-
-		a.menu-border {
-			border-bottom: none;
-		}
-	}
-</style>
