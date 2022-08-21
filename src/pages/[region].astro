@@ -1,0 +1,40 @@
+---
+import Layout from '../layouts/Layout.astro'
+import data from '../data/rss.json'
+import { objectKeys } from '../util/objectKeys'
+import CardList from '../components/CardList.astro'
+import Card from '../components/Card.astro'
+
+interface Params {
+  region: keyof typeof data
+}
+
+export function getStaticPaths() {
+  return objectKeys(data).map((region) => ({ params: { region } }))
+}
+
+const { region } = Astro.params as unknown as Params
+const rssData = data[region]
+---
+
+<Layout>
+  <section class="w-full">
+    <CardList>
+      {
+        rssData.map(({ title, rss, source }) => (
+          <Card>
+            <div class="flex flex-col justify-center h-full p-4 font-mono">
+              <div class="font-semibold">{title}</div>
+              <div>
+                ◈ <a href={rss}>Subscribe</a> ◈
+              </div>
+              <div>
+                <a href={source}>Source</a>
+              </div>
+            </div>
+          </Card>
+        ))
+      }
+    </CardList>
+  </section>
+</Layout>
