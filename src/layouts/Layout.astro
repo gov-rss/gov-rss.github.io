@@ -11,6 +11,70 @@
 			async
 			src="//gc.zgo.at/count.js"
 		></script>
+		<script>
+			// https://github.com/fireship-io/flamethrower/blob/main/lib/router.ts
+			const prefetched = new Set<string>()
+
+			/**
+			 * Find all links on page
+			 */
+			function allLinks() {
+				return Array.from(document.links).filter(
+					(node) =>
+						node.href.includes(document.location.origin) && // on origin url
+						!node.href.includes('#') && // not an id anchor
+						node.href !==
+							(document.location.href || document.location.href + '/') && // not current page
+						!prefetched.has(node.href) // not already prefetched
+				)
+			}
+
+			/**
+			 *  Add prefetch listener to all links on the page
+			 */
+			function prefetch() {
+				allLinks().forEach((node) => {
+					const url = node.getAttribute('href')
+					// Using `pointerenter` instead of `mouseenter` to support touch devices hover behavior,
+					// PS: `pointerenter` event fires only once
+					node.addEventListener('pointerenter', () => createLink(url), {
+						once: true,
+					})
+				})
+			}
+
+			/**
+			 * Create a link to prefetch
+			 */
+			function createLink(url: string | null) {
+				if (url == null) {
+					return
+				}
+
+				const linkEl = document.createElement('link')
+				linkEl.rel = `prefetch`
+				linkEl.href = url
+				linkEl.as = 'document'
+
+				document.head.appendChild(linkEl)
+
+				// Keep track of prefetched links
+				prefetched.add(url)
+			}
+
+			function setupPrefetchListeners() {
+				try {
+					// delay for any js rendered links
+					setTimeout(() => {
+						prefetch()
+					}, 200)
+				} catch (err) {
+					console.error('prefetch failed', err)
+				}
+			}
+
+			setupPrefetchListeners()
+		</script>
 	</head>
 	<body
 		class="container bg-emerald-50 min-h-screen flex flex-col items-center justify-start"
