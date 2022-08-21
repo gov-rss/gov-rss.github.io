@@ -1,9 +1,4 @@
 ---
-export interface Props {
-	title: string;
-}
-
-const { title } = Astro.props as Props;
 ---
 
 <!DOCTYPE html>
@@ -11,46 +6,74 @@ const { title } = Astro.props as Props;
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+		<link rel="icon" type="image/x-icon" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
+		<title>gov+rss</title>
 	</head>
 	<body>
-		<slot />
+		<main
+			class="container min-h-screen pt-4 pb-10 md:px-32 xl:px-64 text-center relative"
+		>
+			<h1
+				class="text-6xl md:text-7xl font-bold text-light-blue-900 bg-green-300 cursor-default w-60 md:w-72"
+				role="banner"
+			>
+				gov+rss
+			</h1>
+			<br />
+			<nav class="flex justify-center space-x-2">
+				<a href="/"> Home</a>
+				<span>⬩</span>
+				<a href="/about"> About</a>
+				<span>⬩</span>
+				<a href="/privacy"> Privacy</a>
+				<span>⬩</span>
+				<a href="https://github.com/gov-rss/scrape">Contribute</a>
+			</nav>
+			<br />
+			<slot />
+			<br />
+			<footer role="contentinfo">
+				<div class="absolute inset-x-0 bottom-5">
+					Website copyright (c) 2021{' '}
+					<a href="https://github.com/callumskeet">Callum Skeet</a> under the{
+						' '
+					}
+					<a
+						href="https://github.com/gov-rss/gov-rss.github.io/blob/master/LICENSE"
+					>
+						MIT license
+					</a>
+				</div>
+				<br />
+			</footer>
+		</main>
+		<style>
+			body {
+				width: 87.5%;
+				margin: 0 auto;
+				background-color: theme('colors.green.50');
+				max-width: 1400px;
+			}
+
+			a {
+				border-bottom: 1px dotted theme('colors.green.900');
+				color: theme('colors.green.900');
+			}
+
+			a:hover {
+				border-bottom: 1px dotted theme('colors.blue.800');
+				color: theme('colors.blue.800');
+				background-color: theme('colors.light-blue.100');
+			}
+
+			h1 {
+				margin: 0 auto;
+			}
+
+			p {
+				@apply text-lg font-semibold;
+			}
+		</style>
 	</body>
 </html>
-<style>
-	:root {
-		--font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
-		--font-size-lg: clamp(1.2rem, 0.7vw + 1.2rem, 1.5rem);
-		--font-size-xl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
-
-		--color-text: hsl(12, 5%, 4%);
-		--color-bg: hsl(10, 21%, 95%);
-		--color-border: hsl(17, 24%, 90%);
-	}
-
-	html {
-		font-family: system-ui, sans-serif;
-		font-size: var(--font-size-base);
-		color: var(--color-text);
-		background-color: var(--color-bg);
-	}
-
-	body {
-		margin: 0;
-	}
-
-	:global(h1) {
-		font-size: var(--font-size-xl);
-	}
-
-	:global(h2) {
-		font-size: var(--font-size-lg);
-	}
-
-	:global(code) {
-		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-			Bitstream Vera Sans Mono, Courier New, monospace;
-	}
-</style>
