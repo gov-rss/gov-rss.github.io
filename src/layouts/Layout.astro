@@ -7,9 +7,11 @@
 		<meta name="generator" content={Astro.generator} />
 		<title>gov+rss</title>
 	</head>
-	<body class="bg-emerald-50 flex justify-center">
+	<body
+		class="container bg-emerald-50 min-h-screen flex flex-col items-center justify-start"
+	>
 		<main
-			class="container min-h-screen flex flex-col justify-start items-center gap-6 text-center"
+			class="flex flex-col flex-grow flex-shrink-0 w-full justify-start items-center gap-6 text-center"
 		>
 			<header>
 				<h1
@@ -27,28 +29,26 @@
 				<span>⬩</span>
 				<a href="https://github.com/gov-rss/scrape">Contribute</a>
 			</nav>
-			<section class="flex-grow flex-shrink-0 basis-auto w-full">
-				<slot />
-			</section>
-			<footer class="mb-4">
-				<div>
-					Website copyright (c) 2022
-					<a href="https://github.com/callumskeet">Callum Skeet</a> under the
-					<a
-						href="https://github.com/gov-rss/gov-rss.github.io/blob/master/LICENSE"
-					>
-						MIT license
-					</a>
-				</div>
-			</footer>
+			<slot />
 		</main>
+		<footer class="mb-4">
+			<div>
+				Website copyright (c) 2022
+				<a href="https://github.com/callumskeet">Callum Skeet</a> under the
+				<a
+					href="https://github.com/gov-rss/gov-rss.github.io/blob/master/LICENSE"
+				>
+					MIT license
+				</a>
+			</div>
+		</footer>
 		<style>
-			a {
+			:global(a) {
 				border-bottom: 1px dotted theme('colors.emerald.900');
 				color: theme('colors.emerald.900');
 			}
 
-			a:hover {
+			:global(a:hover) {
 				border-bottom: 1px dotted theme('colors.blue.800');
 				color: theme('colors.blue.800');
 				background-color: theme('colors.sky.100');
