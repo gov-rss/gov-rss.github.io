@@ -1,125 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/x-icon" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>gov+rss</title>
-		<script
-			data-goatcounter="https://gov-rss.goatcounter.com/count"
-			async
-			src="//gc.zgo.at/count.js"
-		></script>
-		<script>
-			// https://github.com/fireship-io/flamethrower/blob/main/lib/router.ts
-			const prefetched = new Set<string>()
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/x-icon" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>gov+rss</title>
+    <script
+      data-goatcounter="https://gov-rss.goatcounter.com/count"
+      async
+      src="//gc.zgo.at/count.js"
+    ></script>
+    <script>
+      // https://github.com/fireship-io/flamethrower/blob/main/lib/router.ts
+      const prefetched = new Set<string>()
 
-			/**
-			 * Find all links on page
-			 */
-			function allLinks() {
-				return Array.from(document.links).filter(
-					(node) =>
-						node.href.includes(document.location.origin) && // on origin url
-						!node.href.includes('#') && // not an id anchor
-						node.href !==
-							(document.location.href || document.location.href + '/') && // not current page
-						!prefetched.has(node.href) // not already prefetched
-				)
-			}
+      /**
+       * Find all links on page
+       */
+      function allLinks() {
+        return Array.from(document.links).filter(
+          (node) =>
+            node.href.includes(document.location.origin) && // on origin url
+            !node.href.includes('#') && // not an id anchor
+            node.href !==
+              (document.location.href || document.location.href + '/') && // not current page
+            !prefetched.has(node.href) // not already prefetched
+        )
+      }
 
-			/**
-			 *  Add prefetch listener to all links on the page
-			 */
-			function prefetch() {
-				allLinks().forEach((node) => {
-					const url = node.getAttribute('href')
-					// Using `pointerenter` instead of `mouseenter` to support touch devices hover behavior,
-					// PS: `pointerenter` event fires only once
-					node.addEventListener('pointerenter', () => createLink(url), {
-						once: true,
-					})
-				})
-			}
+      /**
+       *  Add prefetch listener to all links on the page
+       */
+      function prefetch() {
+        allLinks().forEach((node) => {
+          const url = node.getAttribute('href')
+          // Using `pointerenter` instead of `mouseenter` to support touch devices hover behavior,
+          // PS: `pointerenter` event fires only once
+          node.addEventListener('pointerenter', () => createLink(url), {
+            once: true,
+          })
+        })
+      }
 
-			/**
-			 * Create a link to prefetch
-			 */
-			function createLink(url: string | null) {
-				if (url == null) {
-					return
-				}
+      /**
+       * Create a link to prefetch
+       */
+      function createLink(url: string | null) {
+        return new Promise((res, rej) => {
+          if (url == null) {
+            rej('URL must be defined')
+            return
+          }
 
-				const linkEl = document.createElement('link')
-				linkEl.rel = `prefetch`
-				linkEl.href = url
-				linkEl.as = 'document'
+          const link = document.createElement('link')
+          link.rel = `prefetch`
+          link.href = url
+          link.as = 'document'
 
-				document.head.appendChild(linkEl)
+          link.onload = res
+          link.onerror = rej
 
-				// Keep track of prefetched links
-				prefetched.add(url)
-			}
+          document.head.appendChild(link)
 
-			function setupPrefetchListeners() {
-				try {
-					// delay for any js rendered links
-					setTimeout(() => {
-						prefetch()
-					}, 200)
-				} catch (err) {
-					console.error('prefetch failed', err)
-				}
-			}
+          // Keep track of prefetched links
+          prefetched.add(url)
+        })
+      }
 
-			setupPrefetchListeners()
-		</script>
-	</head>
-	<body
-		class="container bg-emerald-50 min-h-screen flex flex-col items-center justify-start"
-	>
-		<main
-			class="flex flex-col flex-grow flex-shrink-0 w-full justify-start items-center gap-6 text-center"
-		>
-			<header>
-				<h1
-					class="mt-4 text-6xl md:text-7xl font-bold text-sky-900 bg-emerald-300 cursor-default w-60 md:w-72"
-				>
-					gov+rss
-				</h1>
-			</header>
-			<nav class="flex justify-center gap-2">
-				<a href="/"> Home</a>
-				<span>⬩</span>
-				<a href="/about"> About</a>
-				<span>⬩</span>
-				<a href="https://github.com/gov-rss/scrape">Contribute</a>
-			</nav>
-			<slot />
-		</main>
-		<footer class="mb-4">
-			<div>
-				Website copyright (c) 2022
-				<a href="https://github.com/callumskeet">Callum Skeet</a> under the
-				<a
-					href="https://github.com/gov-rss/gov-rss.github.io/blob/master/LICENSE"
-				>
-					MIT license
-				</a>
-			</div>
-		</footer>
-		<style>
-			:global(a) {
-				border-bottom: 1px dotted theme('colors.emerald.900');
-				color: theme('colors.emerald.900');
-			}
+      function setupPrefetchListeners() {
+        try {
+          // delay for any js rendered links
+          setTimeout(() => {
+            prefetch()
+          }, 200)
+        } catch (err) {
+          console.error('prefetch failed', err)
+        }
+      }
 
-			:global(a:hover) {
-				border-bottom: 1px dotted theme('colors.blue.800');
-				color: theme('colors.blue.800');
-				background-color: theme('colors.sky.100');
-			}
-		</style>
-	</body>
+      setupPrefetchListeners()
+    </script>
+  </head>
+  <body
+    class="container bg-emerald-50 min-h-screen flex flex-col items-center justify-start"
+  >
+    <main
+      class="flex flex-col flex-grow flex-shrink-0 w-full justify-start items-center gap-6 text-center"
+    >
+      <header>
+        <h1
+          class="mt-4 text-6xl md:text-7xl font-bold text-sky-900 bg-emerald-300 cursor-default w-60 md:w-72"
+        >
+          gov+rss
+        </h1>
+      </header>
+      <nav class="flex justify-center gap-2">
+        <a href="/"> Home</a>
+        <span>⬩</span>
+        <a href="/about"> About</a>
+        <span>⬩</span>
+        <a href="https://github.com/gov-rss/scrape">Contribute</a>
+      </nav>
+      <slot />
+    </main>
+    <footer class="mb-4">
+      <div>
+        Website copyright (c) 2022
+        <a href="https://github.com/callumskeet">Callum Skeet</a> under the
+        <a
+          href="https://github.com/gov-rss/gov-rss.github.io/blob/master/LICENSE"
+        >
+          MIT license
+        </a>
+      </div>
+    </footer>
+    <style>
+      :global(a) {
+        border-bottom: 1px dotted theme('colors.emerald.900');
+        color: theme('colors.emerald.900');
+      }
+
+      :global(a:hover) {
+        border-bottom: 1px dotted theme('colors.blue.800');
+        color: theme('colors.blue.800');
+        background-color: theme('colors.sky.100');
+      }
+    </style>
+  </body>
 </html>
